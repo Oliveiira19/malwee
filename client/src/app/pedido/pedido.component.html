@@ -1,0 +1,14 @@
+<h1>Malwee</h1>
+<mat-card>
+    <input type="text" placeholder="Buscar">
+    <tr></tr>
+    <button class="favorite styled" (click)="addButtonClick()">+</button>
+
+    <mat-list>
+        <div *ngFor="let pedido of pedidos">
+            {{pedido.id}} - {{pedido.name}}
+            <button class="favorite styled" (click)="editButtonClick(pedido)">Editar</button>
+            <button class="favorite styled" (click)="deletePedido(pedido)">Excluir</button>
+        </div>
+    </mat-list>
+</mat-card>

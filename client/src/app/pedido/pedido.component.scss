@@ -1,0 +1,16 @@
+h1 {
+    border: 30px solid transparent;
+    font-size: 40px;
+    background-color: rgb(139, 84, 226);
+}
+.modal{
+  background: rgb(209, 107, 223);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0, 0, 0);
+  min-width: 320px;
+  position: fixed;
+  left: 50%;
+  padding: 24px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

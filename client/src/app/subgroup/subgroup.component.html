@@ -1,0 +1,15 @@
+<h1>Malwee</h1>
+<mat-card>
+<input type="text" placeholder="Buscar">
+<tr></tr>
+<button class="favorite styled" (click)="addButtonClick()">+</button>
+
+    <mat-list>
+        <div *ngFor="let subGrupo of subGrupos">
+            {{subGrupo.id}} - {{subGrupo.name}}
+            <button class="favorite styled" (click)="editButtonClick(subGrupo)">Editar</button>
+            <button class="favorite styled" (click)="deleteSubGroup(subGrupo)">Excluir</button>
+        </div>
+    </mat-list>
+</mat-card>
+ 

@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Usuario</h2>
+<mat-dialog-content>
+    <mat-form-field class="full-width">
+        <mat-label>Descrição do Usuario</mat-label>
+        <input matInput placeholder="Ex. Gabigol" [(ngModel)]="name">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button (click)="confirmClick()">Confirmar</button>
+</mat-dialog-actions>

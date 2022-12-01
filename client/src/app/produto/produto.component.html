@@ -1,0 +1,18 @@
+<h1>Malwee</h1>
+<mat-card>
+    <input type="text" placeholder="Buscar">
+    <tr></tr>
+    <button class="favorite styled" (click)="addButtonClick()">Novo Produto</button>
+
+    <mat-list>     
+        <div *ngFor="let produto of produto"> 
+            {{produto.id}} - {{produto.name}} 
+            <button class="favorite styled" (click)="editButtonClick(produto)">Editar</button>
+            <button class="favorite styled" (click)="deleteProduto(produto)">Excluir</button>                                    
+        </div>           
+    </mat-list>
+</mat-card>    
+        
+
+     
+           
