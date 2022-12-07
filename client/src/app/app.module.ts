@@ -32,6 +32,7 @@ import { UsermodalComponent } from './usermodal/usermodal.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { PedidomodalComponent } from './pedidomodal/pedidomodal.component';
 import { CepComponent } from './cep/cep.component';
+import { IdadeComponent } from './idade/idade.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { CepComponent } from './cep/cep.component';
     PedidoComponent,
     PedidomodalComponent,
     CepComponent,
+    IdadeComponent,
   ],
   imports: [
     RoutesModule,

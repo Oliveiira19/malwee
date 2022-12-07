@@ -5,6 +5,11 @@ import { QuestionService } from 'src/services/question.service';
 import { CepComponent } from '../cep/cep.component';
 import { ClientemodalComponent } from '../clientemodal/clientemodal.component';
 
+interface Idade {
+  value: string;
+  viewValue: string;
+}
+
 
 @Component({
   selector: 'app-cliente',
@@ -13,6 +18,7 @@ import { ClientemodalComponent } from '../clientemodal/clientemodal.component';
 })
 export class ClienteComponent implements OnInit {
 public cliente : Array<any> = [];
+
 
   
     constructor( private httpService : HttpService,

@@ -4,22 +4,38 @@
         <mat-label>Informações do cliente</mat-label>
         <input matInput placeholder="Nome completo" [(ngModel)]="name">
     </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>idade</mat-label>
+        <input matInput placeholder="Idade" [(ngModel)]="idade">
+    </mat-form-field>
+
     <mat-form-field>
         <mat-label>Rua</mat-label>
         <input matInput placeholder="Rua" [(ngModel)]="rua">
     </mat-form-field>
+    
     <mat-form-field>
         <mat-label>Bairro</mat-label>
         <input matInput placeholder="Bairro" [(ngModel)]="bairro">
     </mat-form-field>
+    
     <mat-form-field>
         <mat-label>Cidade</mat-label>
         <input matInput placeholder="cidade" [(ngModel)]="cidade">
     </mat-form-field>
+    
     <mat-form-field>
         <mat-label>CEP</mat-label>
         <input matInput placeholder="CEP" [(ngModel)]="cep">
     </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Cliente desde</mat-label>
+        <input matInput placeholder="Cliente Desde" [(ngModel)]="clienteDesde">
+    </mat-form-field>
+
+    
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancelar</button>

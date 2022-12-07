@@ -1,9 +1,38 @@
 <h2 mat-dialog-title>Pedidos</h2>
 <mat-dialog-content>
+    
     <mat-form-field class="full-width">
-        <mat-label>Descrição do pedido</mat-label>
+        <mat-label>Pedido</mat-label>
         <input matInput placeholder="Ex. Roupas" [(ngModel)]="name">
     </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Rua</mat-label>
+        <input matInput placeholder="Rua" [(ngModel)]="rua">
+    </mat-form-field>
+ 
+    <mat-form-field class="full-width">
+        <mat-label>Bairro</mat-label>
+        <input matInput placeholder="Bairro" [(ngModel)]="bairro">
+    </mat-form-field>
+ 
+
+    <mat-form-field class="full-width">
+        <mat-label>Cidade</mat-label>
+        <input matInput placeholder="Cidade" [(ngModel)]="cidade">
+    </mat-form-field>
+ 
+    <mat-form-field class="full-width">
+        <mat-label>Estado</mat-label>
+        <input matInput placeholder="Estado" [(ngModel)]="estado">
+    </mat-form-field>
+
+  <mat-form-field class="full-width">
+        <mat-label>País</mat-label>
+        <input matInput placeholder="País" [(ngModel)]="pais">
+    </mat-form-field>
+
+
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancela</button>

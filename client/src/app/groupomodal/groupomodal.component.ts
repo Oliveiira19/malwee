@@ -10,8 +10,7 @@ import { HttpService } from 'src/services/http.service';
 export class GroupomodalComponent implements OnInit {
 
   name : string = '';
-  cor: string = '';
-  tamanho: string= '';
+  
 
   constructor(private httpService : HttpService, 
               private dialogRef: MatDialogRef<GroupomodalComponent>, 
@@ -25,11 +24,11 @@ export class GroupomodalComponent implements OnInit {
 
   async confirmClick(){
     if (!this.data){
-      await this.httpService.post('grupo',{name: this.name, cor: this.cor, tamanho: this.tamanho});
+      await this.httpService.post('grupo',{name: this.name});
     }
 
     if (this.data && this.data.id > 0){
-      await this.httpService.put('grupo',{id : this.data.id, name: this.name, cor: this.cor, tamanho: this.tamanho});
+      await this.httpService.put('grupo',{id : this.data.id, name: this.name});
     }
     
     this.dialogRef.close();

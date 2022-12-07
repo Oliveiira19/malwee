@@ -5,7 +5,7 @@ const jwt = require('../utils/jwt');
 const md5 = require('../utils/md5-pass');
 const { object } = require('joi');
 
-// Alterei uma rota
+
 knl.post('cliente', async (req, resp) => {
     const schema = Joi.object({
         name : Joi.string().max(100).min(1).required(),

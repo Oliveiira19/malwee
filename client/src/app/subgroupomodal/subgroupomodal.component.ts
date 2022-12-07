@@ -9,7 +9,7 @@ import { HttpService } from 'src/services/http.service';
   styleUrls: ['./subgroupomodal.component.scss']
 })
 export class SubgroupomodalComponent implements OnInit {
-  public subGrupo : Array<any> = [];
+  
   name: string = '';
 
   constructor(private httpService : HttpService, 
