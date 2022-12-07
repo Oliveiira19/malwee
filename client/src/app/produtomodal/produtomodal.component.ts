@@ -12,6 +12,7 @@ export class ProdutomodalComponent implements OnInit {
   
   public produto : Array<any> = [];
   name : string = '';
+  tipo: string = '';
 
   constructor(private httpService : HttpService,
     private dialogRef: MatDialogRef<ProdutomodalComponent>, 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/services/http.service';
 import { QuestionService } from 'src/services/question.service';
+import { CepComponent } from '../cep/cep.component';
 import { ClientemodalComponent } from '../clientemodal/clientemodal.component';
 
 
@@ -50,6 +51,13 @@ public cliente : Array<any> = [];
     dialogRef.afterClosed().subscribe(response => {
       this.listar();
     })
+  }
+
+  addButtonCEP(cliente: any){
+    const dialogRef = this.dialog.open(CepComponent, {
+      width: '25rem',
+      data: cliente
+    });
   }
 
   };

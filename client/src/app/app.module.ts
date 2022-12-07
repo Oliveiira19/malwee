@@ -31,6 +31,7 @@ import { ClientemodalComponent } from './clientemodal/clientemodal.component';
 import { UsermodalComponent } from './usermodal/usermodal.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { PedidomodalComponent } from './pedidomodal/pedidomodal.component';
+import { CepComponent } from './cep/cep.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { PedidomodalComponent } from './pedidomodal/pedidomodal.component';
     UsermodalComponent,
     PedidoComponent,
     PedidomodalComponent,
+    CepComponent,
   ],
   imports: [
     RoutesModule,

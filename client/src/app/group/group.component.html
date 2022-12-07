@@ -2,11 +2,11 @@
 <mat-card>
     <input type="text" placeholder="Buscar">
     <tr></tr>
-    <button class="favorite styled" (click)="addButtonClick()">+</button>
+    <button class="favorite styled" (click)="addButtonClick()">Novo Produto</button>
 
     <mat-list>     
         <div *ngFor="let grupo of grupos"> 
-            {{grupo.id}} - {{grupo.name}} 
+            {{grupo.id}} - {{grupo.name}} - {{grupo.cor}}
             <button class="favorite styled" (click)="editButtonClick(grupo)">Editar</button>
             <button class="favorite styled" (click)="deleteGroup(grupo)">Excluir</button>                                    
         </div>           

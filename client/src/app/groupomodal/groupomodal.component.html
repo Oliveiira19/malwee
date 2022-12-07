@@ -4,6 +4,14 @@
         <mat-label>Descrição do grupo</mat-label>
         <input matInput placeholder="Ex. Camisas" [(ngModel)]="name">
     </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Cor</mat-label>
+      <input matInput placeholder="Cor" [(ngModel)]="cor">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Tamanho</mat-label>
+    <input matInput placeholder="Tamanho" [(ngModel)]="tamanho">
+</mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions >
   <button mat-button mat-dialog-close>Cancela</button>

@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpService } from 'src/services/http.service';
+import * as internal from 'stream';
 
 @Component({
   selector: 'app-colecaomodal',
@@ -10,6 +11,7 @@ import { HttpService } from 'src/services/http.service';
 export class ColecaomodalComponent implements OnInit {
 
   name: string = '';
+  ano: number | undefined;
 
   constructor(private httpService : HttpService,
      private dialogRef : MatDialogRef<ColecaomodalComponent>,

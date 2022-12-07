@@ -10,7 +10,11 @@ import { HttpService } from 'src/services/http.service';
 export class ClientemodalComponent implements OnInit {
 
   name : string = '';
-
+  rua: string = '';
+  cep: number | undefined ;
+  bairro: string = '';
+  cidade: string = '';
+  pais: string = '';
   constructor(private httpService: HttpService,
               private dialogRef: MatDialogRef<ClientemodalComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) { }
@@ -23,11 +27,11 @@ export class ClientemodalComponent implements OnInit {
 
   async confirmClick(){
     if(!this.data){
-      await this.httpService.post('cliente', {name: this.name});
+      await this.httpService.post('cliente', {name: this.name, rua: this.rua});
     }
 
     if(this.data && this.data.id > 0){
-      await this.httpService.put('cliente', {id: this.data.id, name: this.name});
+      await this.httpService.put('cliente', {id: this.data.id, name: this.name, rua: this.rua});
     }
     this.dialogRef.close();
 
