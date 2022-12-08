@@ -8,17 +8,15 @@ import { HttpService } from 'src/services/http.service';
   styleUrls: ['./groupomodal.component.scss']
 })
 export class GroupomodalComponent implements OnInit {
-
   name : string = '';
   
-
   constructor(private httpService : HttpService, 
               private dialogRef: MatDialogRef<GroupomodalComponent>, 
               @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
     if (this.data){
-      this.name = this.data.name.cor.tamanho;
+      this.name = this.data.name;
     }
   }
 

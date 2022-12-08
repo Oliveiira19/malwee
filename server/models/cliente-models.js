@@ -16,9 +16,21 @@ module.exports = (sequelize) => {
             type : Sequelize.STRING(100),
             allowNull : false
         },
+        cnpj : {
+            type : Sequelize.STRING(14),
+            allowNull: false
+        },
         status : {
             type : Sequelize.INTEGER,
             allowNull : false
+        },
+        clienteDesde : {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
+        cpf : {
+            type: Sequelize.INTEGER,
+            allowNull: false
         }
     }
 )}

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { async } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/services/http.service';
 import { QuestionService } from 'src/services/question.service';
@@ -27,7 +26,7 @@ export class PedidoComponent implements OnInit {
 
   deletePedido(pedido: any): void{
     this.questionService.ask(async () => {
-      await this.httpService.patch(`pedido/${pedido.id}`,{});
+      await this.httpService.patch(`pedido/${pedido}`,{});
       this.listar();
     });
   }
@@ -46,6 +45,16 @@ export class PedidoComponent implements OnInit {
     const dialogRef = this.dialog.open(PedidomodalComponent, {
       width: '25rem',
       data: pedido
+    });
+
+    dialogRef.afterClosed().subscribe(response => {
+      this.listar();
+    })
+  }
+
+  pedidoButtonClick(){
+    const dialogRef = this.dialog.open(PedidoComponent, {
+      width: '25rem '
     });
 
     dialogRef.afterClosed().subscribe(response => {

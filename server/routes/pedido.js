@@ -5,6 +5,11 @@ const Joi = require('joi');
 knl.post('pedido', async (req, resp) => {
     const schema = Joi.object({
         name : Joi.string().max(100).min(1).required(),
+        fantasyName: Joi.string().max(100).min.required(),
+        clienteDesde: Joi.string().max(100).min(1).required(),
+        
+       
+
     });
 
     knl.validate(req.body, schema);
@@ -33,7 +38,7 @@ const result = await knl.sequelize().models.pedido.findAll({
 resp.json(result);
 console.log(result);
 })
-knl.patch('pedido/:id', async (req, resp)=> {
+knl.patch('pedido', async (req, resp)=> {
     const result = await knl.sequelize().models.pedido.update(
       
         {
@@ -46,8 +51,6 @@ knl.patch('pedido/:id', async (req, resp)=> {
         },
             }
         )
-    resp.json({
-        Status: result
-    });
+    resp.json({result});
     console.log(result)
 })

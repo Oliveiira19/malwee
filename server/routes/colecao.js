@@ -1,9 +1,6 @@
 const knl = require('../knl');
 const securityConsts = require('../consts/security-consts');
 const Joi = require('joi');
-const jwt = require('../utils/jwt');
-const md5 = require('../utils/md5-pass');
-
 
 knl.post('colecao', async (req, resp) => {
     const schema = Joi.object({

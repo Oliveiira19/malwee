@@ -2,13 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/services/http.service';
 import { QuestionService } from 'src/services/question.service';
-import { CepComponent } from '../cep/cep.component';
 import { ClientemodalComponent } from '../clientemodal/clientemodal.component';
 
-interface Idade {
-  value: string;
-  viewValue: string;
-}
 
 
 @Component({
@@ -17,7 +12,7 @@ interface Idade {
   styleUrls: ['./cliente.component.scss']
 })
 export class ClienteComponent implements OnInit {
-public cliente : Array<any> = [];
+public clientes : Array<any> = [];
 
 
   
@@ -29,10 +24,10 @@ public cliente : Array<any> = [];
       this.listar();
     }
   async listar(){
-    this.cliente = await this.httpService.get('cliente');
+    this.clientes = await this.httpService.get('cliente');
   }
   deleteCliente(cliente: any): void{
-    this.questionService.ask(async() =>{
+    this.questionService.ask(async () =>{
       await this.httpService.patch(`cliente/${cliente.id}`,{});
       this.listar();
     });
@@ -59,12 +54,6 @@ public cliente : Array<any> = [];
     })
   }
 
-  addButtonCEP(cliente: any){
-    const dialogRef = this.dialog.open(CepComponent, {
-      width: '25rem',
-      data: cliente
-    });
-  }
 
   };
  

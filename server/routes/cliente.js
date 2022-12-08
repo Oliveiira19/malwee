@@ -1,17 +1,23 @@
 const knl = require('../knl');
 const securityConsts = require('../consts/security-consts');
 const Joi = require('joi');
-const jwt = require('../utils/jwt');
-const md5 = require('../utils/md5-pass');
-const { object } = require('joi');
 
 
 knl.post('cliente', async (req, resp) => {
     const schema = Joi.object({
         name : Joi.string().max(100).min(1).required(),
         fantasyName : Joi.string().max(100).min(1).required(),
-        cnpj : Joi.string().max(14).min(14),
-        endereco : Joi.string().max(100).min(1).required()
+        clienteDesde: Joi.string.max(8).min(8).allow(''),
+        cpf: Joi.string().max(11).min(11).allow(''),
+        endereco: Joi.array().items(Joi.object, {
+            rua: Joi.string().max(100).min(1).required(),
+            bairro: Joi.string().max(100).min(1).required(),
+            cidade: Joi.string().max(100).min(1).required(),
+            estado: Joi.string().max(100).min(1).required(),
+            pais: Joi.string().max(100).min(1).required(),
+            cnpj: Joi.string().max(14).min(14).allow('')
+    
+        })
     });
 
     knl.validate(req.body, schema);

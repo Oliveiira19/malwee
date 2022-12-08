@@ -22,6 +22,9 @@ subGrupos: Array<any> = [];
   ngOnInit(): void {
     this.listar();
   }
+
+
+  
 async listar(){
   this.subGrupos = await this.httpService.get('subgrupo');
   console.log(this.subGrupos);

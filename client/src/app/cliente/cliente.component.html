@@ -4,7 +4,7 @@
     <tr></tr>
     <button class="favorite styled" (click)="addButtonClick()">Novo</button>
     <mat-list>
-        <div *ngFor="let cliente of cliente">
+        <div *ngFor="let cliente of clientes">
             {{cliente.id}} = {{cliente.name}}
             <button class="favorite styled" (click)="editButtonClick(cliente)">Editar</button>
             <button class="favorite styled" (click)="deleteCliente(cliente)">Excluir</button>

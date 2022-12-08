@@ -19,7 +19,6 @@ export class GroupComponent implements OnInit {
   ngOnInit(): void {
     this.listar();
   }
-
   async listar(){
     this.grupos = await this.httpService.get('grupo');
   }

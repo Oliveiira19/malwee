@@ -22,6 +22,8 @@ export class SubgroupomodalComponent implements OnInit {
     }
   
   }
+
+  
   async confirmClick(){
     if (!this.data){
       await this.httpService.post('subGrupo',{name: this.name});

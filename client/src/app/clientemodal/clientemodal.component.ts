@@ -1,5 +1,4 @@
 import { Component, Inject ,IterableDiffers,OnInit } from '@angular/core';
-import { MatDatepickerControl, MatDatepickerPanel } from '@angular/material/datepicker/datepicker-base';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpService } from 'src/services/http.service';
 
@@ -40,10 +39,6 @@ export class ClientemodalComponent implements OnInit {
     }
     this.dialogRef.close();
 
-  }
-
-  consultaCep(){
-    let cep = this.httpService.get('endereco.cep');
   }
 
 }

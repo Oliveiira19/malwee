@@ -21,7 +21,7 @@ export class ColecaomodalComponent implements OnInit {
     }
   }
 
-async confirmClick(){
+  async confirmClick(){
   if(!this.data){
     await this.httpService.post('colecao', {name: this.name});
   }
@@ -31,6 +31,7 @@ if(this.data && this.data.id > 0){
 }
 
 this.dialogRef.close();
+
 }
 
 }

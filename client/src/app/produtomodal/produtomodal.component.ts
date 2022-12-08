@@ -9,14 +9,12 @@ import { HttpService } from 'src/services/http.service';
   styleUrls: ['./produtomodal.component.scss']
 })
 export class ProdutomodalComponent implements OnInit {
-  
-  public produto : Array<any> = [];
   name : string = '';
-  tipo: string = '';
+
 
   constructor(private httpService : HttpService,
-    private dialogRef: MatDialogRef<ProdutomodalComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+              private dialogRef: MatDialogRef<ProdutomodalComponent>, 
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
    if(!this.data){

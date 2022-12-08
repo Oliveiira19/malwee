@@ -2,16 +2,10 @@
 <mat-dialog-content>
     <mat-form-field class="full-width">
         <mat-label>Descrição de produto</mat-label>
-        <input matInput placeholder="Ex.Calça" [(ngModel)]="name">
+        <input matInput placeholder="Produto" [(ngModel)]="name">
     </mat-form-field>
-
-    <mat-form-field class="full-width">
-        <mat-label>Tipo</mat-label>
-        <input matInput placeholder="Tipo" [(ngModel)]="tipo">
-    </mat-form-field>
-
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-dialog-close="Cancelar">Cancelar</button>
+    <button mat-dialog-close>Cancela</button>
     <button mat-button (click)="confirmClick()">Confirmar</button>
 </mat-dialog-actions>
