@@ -5,6 +5,8 @@ const Joi = require('joi');
 knl.post('colecao', async (req, resp) => {
     const schema = Joi.object({
         name : Joi.string().max(100).min(1).required(),
+        description: Joi.string().max(100).min(1).required(),
+        
     });
 
     knl.validate(req.body, schema);
@@ -39,7 +41,7 @@ knl.get('colecao', async (req, resp) =>{
     resp.json({result }); 
     console.log(result);
 })
-knl.patch('colecao/:id', async (req, resp)=> {
+knl.patch('colecao:id', async (req, resp)=> {
     const result = await knl.sequelize().models.colecao.update(
       
         {
@@ -52,6 +54,8 @@ knl.patch('colecao/:id', async (req, resp)=> {
         },
             }
         )
-    resp.json({result});
+    resp.json({
+        Status: result
+    });
     console.log(result)
 })

@@ -1,8 +1,7 @@
 <h1>Malwee</h1>
 <mat-card>
-<input type="text" placeholder="Buscar">
 <tr></tr>
-<button class="favorite styled" (click)="addButtonClick()">Nova Coleção</button>
+<button class="favorite styled" (click)="addButtonClick()" mat-raised-button color="primary" >Nova Coleção</button>
 
     <mat-list>
         <div *ngFor="let colecao of colecao">

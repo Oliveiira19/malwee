@@ -10,11 +10,13 @@ import { HttpService } from 'src/services/http.service';
 export class PedidomodalComponent implements OnInit {
 
   name: string = '';
-  rua: string = '';
-  bairro: string = '';
-  cidade: string = '';
-  estado: string = '';
-  pais: string = '';
+  fkCliente: number = 0;
+  StartDate = new Date();
+  issueDate: number = 0;
+  deliveryDate: number = 0;
+  fkEndereco: number = 0;
+  total: number = 0;
+
 
   constructor(private httpSservice: HttpService,
               private dialogRef: MatDialogRef<PedidomodalComponent>,
@@ -28,13 +30,12 @@ export class PedidomodalComponent implements OnInit {
 
   async confirmClick(){
     if(!this.data){
-      await this.httpSservice.post('pedido', {name:this.name, rua: this.rua, bairro: this.bairro,
-                                             cidade: this.cidade, estado: this.estado, pais: this.pais});
+      await this.httpSservice.post('pedido', {name:this.name, fkCliente: this.fkCliente, StartDate: this.StartDate, 
+      issueDate:this.issueDate, deliveryDate:this.deliveryDate,fkEndereco: this.fkEndereco, total: this.total});
     }
 
     if(this.data && this.data.id > 0){
-      await this.httpSservice.put('pedido', {id: this.data.id, name: this.name, rua: this.rua, bairro: this.bairro,
-        cidade: this.cidade, estado: this.estado, pais: this.pais});
+      await this.httpSservice.put('pedido', {id: this.data.id, name: this.name, });
     }
 
     this.dialogRef.close();

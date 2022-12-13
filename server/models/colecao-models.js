@@ -10,11 +10,15 @@ module.exports = (sequelize) => {
         },
         name : {
             type : Sequelize.STRING(100),
-            allowNull : false,
+            allowNull : false
         },
         status : {
             type : Sequelize.INTEGER,
             allowNull : false
+        },
+        description: {
+            type: Sequelize.STRING(100),
+            allowNull: false
         }
     })
 }

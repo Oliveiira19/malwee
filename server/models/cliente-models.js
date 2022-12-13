@@ -31,6 +31,7 @@ module.exports = (sequelize) => {
         cpf : {
             type: Sequelize.INTEGER,
             allowNull: false
-        }
+        },
+        
     }
 )}

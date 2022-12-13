@@ -1,14 +1,13 @@
 <h1>Malwee</h1>
 <mat-card>
-    <input type="text" placeholder="Buscar">
     <tr></tr>
-    <button class="favorite styled" (click)="addButtonClick()">Novo Produto</button>
+    <button class="favorite styled" (click)="addButtonClick()" mat-raised-button color="primary">Novo Produto</button>
 
     <mat-list>     
         <div *ngFor="let grupo of grupos"> 
             {{grupo.id}} - {{grupo.name}} - {{grupo.cor}}
-            <button class="favorite styled" (click)="editButtonClick(grupo)">Editar</button>
-            <button class="favorite styled" (click)="deleteGroup(grupo)">Excluir</button>                                    
+            <button class="favorite styled" (click)="editButtonClick(grupo)" mat-raised-button color="primary">Editar</button>
+            <button class="favorite styled" (click)="deleteGroup(grupo) " mat-raised-button color="primary">Excluir</button>                                    
         </div>           
     </mat-list>
 </mat-card>    

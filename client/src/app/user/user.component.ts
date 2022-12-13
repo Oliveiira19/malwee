@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/services/http.service';
 import { QuestionService } from 'src/services/question.service';
-import { ClientemodalComponent } from '../clientemodal/clientemodal.component';
 import { UsermodalComponent } from '../usermodal/usermodal.component';
 
 @Component({

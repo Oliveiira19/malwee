@@ -68,6 +68,8 @@ knl.patch('produto/:id', async (req, resp)=> {
         },
             }
         )
-    resp.json({result});
+    resp.json({
+    Status: result
+    });
     console.log(result)
 })

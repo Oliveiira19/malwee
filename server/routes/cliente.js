@@ -51,7 +51,7 @@ knl.get('cliente' , async(req, resp)=>{
     console.log(result);
 })
 
-knl.patch('cliente', async(req, resp)=>{
+knl.patch('cliente/:id', async(req, resp)=>{
     const result = await knl.sequelize().models.cliente.update(
         {
             status : 3
@@ -63,6 +63,8 @@ knl.patch('cliente', async(req, resp)=>{
         },
             }
         )
-    resp.json({result});
+    resp.json({
+       Status: result
+    });
     console.log(result);
     })

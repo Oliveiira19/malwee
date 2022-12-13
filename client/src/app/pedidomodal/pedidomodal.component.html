@@ -6,35 +6,33 @@
     </mat-form-field>
 
     <mat-form-field class="full-width">
-        <mat-label>Rua</mat-label>
-        <input matInput placeholder="Rua" [(ngModel)]="rua">
+        <mat-label>Cleinte</mat-label>
+        <input matInput placeholder="Rua" [(ngModel)]="fkCliente">
     </mat-form-field>
  
     <mat-form-field class="full-width">
-        <mat-label>Bairro</mat-label>
-        <input matInput placeholder="Bairro" [(ngModel)]="bairro">
-    </mat-form-field>
- 
-
-    <mat-form-field class="full-width">
-        <mat-label>Cidade</mat-label>
-        <input matInput placeholder="Cidade" [(ngModel)]="cidade">
+        <mat-label>Data de emissão</mat-label>
+        <input matInput placeholder="Bairro" [(ngModel)]="issueDate">
     </mat-form-field>
  
     <mat-form-field class="full-width">
-        <mat-label>Estado</mat-label>
-        <input matInput placeholder="Estado" [(ngModel)]="estado">
+        <mat-label>Data de entrega</mat-label>
+        <input matInput placeholder="Cidade" [(ngModel)]="deliveryDate">
+    </mat-form-field>
+ 
+    <mat-form-field class="full-width">
+        <mat-label>Endereco</mat-label>
+        <input matInput placeholder="Estado" [(ngModel)]="fkEndereco">
     </mat-form-field>
 
   <mat-form-field class="full-width">
-        <mat-label>País</mat-label>
-        <input matInput placeholder="País" [(ngModel)]="pais">
+        <mat-label>Total</mat-label>
+        <input matInput placeholder="País" [(ngModel)]="total">
     </mat-form-field>
-
 
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-button mat-dialog-close>Cancela</button>
-    <button mat-button (click)="confirmClick()">Confirmar</button>
+    <button mat-button mat-dialog-close  mat-raised-button color="primary"  >Cancela</button>
+    <button mat-button (click)="confirmClick()"  mat-raised-button color="primary">Confirmar</button>
     
 </mat-dialog-actions>

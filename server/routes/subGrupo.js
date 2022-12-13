@@ -59,8 +59,6 @@ knl.patch('subgrupo/:id', async (req, resp)=> {
         },
             }
         )
-    resp.json({
-        Status: result
-    });
+    resp.json({result});
     console.log(result)
 })

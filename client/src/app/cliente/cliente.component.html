@@ -1,8 +1,7 @@
 <h1>Malwee</h1>
 <mat-card>
-    <input type="text" placeholder="Novo Cliente">
     <tr></tr>
-    <button class="favorite styled" (click)="addButtonClick()">Novo</button>
+    <button class="favorite styled" (click)="addButtonClick()" mat-raised-button color="primary">Novo cliente </button>
     <mat-list>
         <div *ngFor="let cliente of clientes">
             {{cliente.id}} = {{cliente.name}}
