@@ -17,14 +17,18 @@ knl.post('cliente', async (req, resp) => {
             pais: Joi.string().max(100).min(1).required(),
             cnpj: Joi.string().max(14).min(14).allow('')
     
-        })
+        }) 
     });
 
     knl.validate(req.body, schema);
 
     const result = await knl.sequelize().models.cliente.findAll({
         where : {
-            name : req.body.name
+            name : req.body.name,
+            fantasyName: req.body.fantasyName,
+            clienteDesde: req.body.clienteDesde,
+            cpf: req.body.cpf,
+            endereco: req.body.endereco
             
         }
     }) 

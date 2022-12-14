@@ -11,7 +11,7 @@ module.exports = (sequelize) => {
         },
 
  rua:{
-    type: Sequelize.STRING(20),
+    type: Sequelize.STRING(100),
     allowNull: false
 },
 bairro: {
@@ -46,6 +46,5 @@ PontoR: {
     type: Sequelize.STRING(100),
     allowNull: false
 }
-
 })
 }

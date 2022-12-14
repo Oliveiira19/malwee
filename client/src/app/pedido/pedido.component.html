@@ -6,7 +6,7 @@
 
     <mat-list>
         <div *ngFor="let pedido of pedidos">
-            {{pedido.id}} - {{pedido.name}}
+            {{pedido.id}} - {{pedido.fkCliente}} - {{pedido.fkEndereco}}
             <button class="favorite styled" (click)="editButtonClick(pedido)"  mat-raised-button color="primary" >Editar</button>
             <button class="favorite styled" (click)="deletePedido(pedido)" mat-raised-button color="primary" >Excluir</button>
         </div>

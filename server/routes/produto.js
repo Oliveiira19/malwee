@@ -5,13 +5,23 @@ const Joi = require('joi');
 
 knl.post('produto', async (req, resp) => {
     const schema = Joi.object({
-        name : Joi.string().max(100).min(1).required(),
+        DescP: Joi.string.max(100).min(1),
+        PVenda: Joi.number().min(1),
+        FKSGrupo: Joi.number().min(1).required(),
+        FKGrupo: Joi.number().min(1).required(),
+        FKColecao: Joi.number().min(1).required()
+        
     });
 
     knl.validate(req.body, schema);
 
     const user = knl.sequelize().models.produto.build({
-        name: req.body.name,
+       DescP: req.body.DescP,
+       PVenda: req.body.PVenda,
+       FKSGrupo: req.body.FkSGrupo,
+       FKGrupo: req.body.FkGrupo,
+       FKColecao: req.body.FkColecao,
+
         status: 1
     });
     
@@ -41,13 +51,9 @@ knl.put('produto', async (req, resp) => {
 }, securityConsts.USER_TYPE_PUBLIC);
 
 knl.get('produto', async (req, resp)=>{
-    const schema = Joi.object({
-        name : Joi.string().max(100).min(1).required(),  
-  });
-
 const result = await knl.sequelize().models.produto.findAll({
     where : {
-    status : 1
+    status : 1  
 
     }
     })
@@ -55,7 +61,7 @@ resp.json(result);
 console.log(result);
 })
 
-knl.patch('produto/:id', async (req, resp)=> {
+knl.patch('produto', async (req, resp)=> {
     const result = await knl.sequelize().models.produto.update(
       
         {
@@ -68,8 +74,6 @@ knl.patch('produto/:id', async (req, resp)=> {
         },
             }
         )
-    resp.json({
-    Status: result
-    });
+    resp.json({ result });
     console.log(result)
 })

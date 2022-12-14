@@ -23,6 +23,10 @@ module.exports = (sequelize) => {
         FKGrupo : {
             type: Sequelize.INTEGER,
             allowNull: false,
+        },
+        FKColecao: {
+           type: Sequelize.INTEGER,
+           allowNull: false 
         }
     
 

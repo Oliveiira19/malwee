@@ -30,8 +30,8 @@ export class PedidomodalComponent implements OnInit {
 
   async confirmClick(){
     if(!this.data){
-      await this.httpSservice.post('pedido', {name:this.name, fkCliente: this.fkCliente, StartDate: this.StartDate, 
-      issueDate:this.issueDate, deliveryDate:this.deliveryDate,fkEndereco: this.fkEndereco, total: this.total});
+      await this.httpSservice.post('pedido', {fkCliente: this.fkCliente, 
+      issueDate:this.issueDate, deliveryDate:this.deliveryDate, fkEndereco: this.fkEndereco, total: this.total});
     }
 
     if(this.data && this.data.id > 0){

@@ -20,13 +20,17 @@ module.exports = (sequelize) => {
         type: Sequelize.STRING(),
         allowNull: false
         },
-       fkEndereço: {
+       fkEndereco: {
         type: Sequelize.INTEGER,
         allowNull: false
         },
        total: {
         type: Sequelize.DECIMAL(),
         allowNull: false
+        },
+        status : {
+            type : Sequelize.INTEGER,
+            allowNull : false
         }
 })
 }

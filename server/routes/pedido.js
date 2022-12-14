@@ -7,18 +7,17 @@ knl.post('pedido', async (req, resp) => {
       fkCliente : Joi.number().min(1),
       issueDate: Joi.date().raw().required(),
       deliveryDate: Joi.date().raw().required(),
-      fkEndereço: Joi.number().min(1).required(),
+      fkEndereco: Joi.number().min(1).required(),
       total: Joi.number().min(1).required() 
     });
 
     knl.validate(req.body, schema);
 
     const user = knl.sequelize().models.pedido.build({
-        name: req.body.name,
         fkCliente: req.body.fkCliente,
         issueDate: req.body.issueDate,
         deliveryDate: req.body.deliveryDate,
-        fkEndereço: req.body.fkEndereço,
+        fkEndereco: req.body.fkEndereco,
         total: req.body.total,
         status: 1
     });
@@ -29,20 +28,27 @@ knl.post('pedido', async (req, resp) => {
 }, securityConsts.USER_TYPE_PUBLIC);
 
 knl.get('pedido', async (req, resp) => {
-    const schema = Joi.object({
-        name : Joi.string().max(100).min(1).required(),  
-  });
-
-const result = await knl.sequelize().models.pedido.findAll({
+let result = await knl.sequelize().models.pedido.findAll({
     where : {
-    status : 1
-
+         status : 1
     }
-    })
+ });
+ result = knl.objects.copy(result);
+
+ if(!knl.objects.isEmptyArray(result));
+
+    for(let pedido of result){
+        const cliente = await knl.sequelize().models.cliente.findAll(
+            {where: {id : pedido.fkCliente}}
+        )
+        if(!knl.objects.isEmptyArray(cliente)){
+            pedido.cliente_description = cliente[0].description
+        }
+    }
+
 resp.json(result);
-console.log(result);
-})
-knl.patch('pedido/id', async (req, resp)=> {
+});
+knl.patch('pedido', async (req, resp)=> {
     const result = await knl.sequelize().models.pedido.update(
       
         {
@@ -55,8 +61,6 @@ knl.patch('pedido/id', async (req, resp)=> {
         },
             }
         )
-    resp.json({
-       Status: result
-    });
+    resp.json({ result });
     console.log(result)
 })
